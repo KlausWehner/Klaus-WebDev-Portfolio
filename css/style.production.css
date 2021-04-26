@@ -1,0 +1,492 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+* {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(255, 255, 241);
+    color: rgb(99, 57, 57);
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: calc(.6rem + .5vw);
+    font-weight: 350;
+    line-height: normal;
+    margin: 1vh 3vw;
+}
+
+:root { /*background*/ /*rollover - hover */ /* main font */ /*also used for h1*/ /*also used for h2*/ /* also used for h3*/
+}
+
+@font-face {
+    font-family: "Josefin Sans", sans-serif;
+    src: url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,500;0,700;1,500&family=Poppins:wght@600&family=Recursive&family=Source+Code+Pro:wght@400;900&display=swap");
+}
+
+h1 {
+    font-size: calc(1.2rem + 1.5vw);
+    font-weight: 500;
+}
+
+h2 {
+    font-size: calc(1.2rem + 1.2vw);
+    font-weight: 400;
+}
+  
+h3 {
+    font-size: calc(.5rem + 1vw);
+    font-weight: 400;
+}
+
+p {
+    font-size: calc(.6rem + .5vw);
+    font-weight: 350;
+}
+
+a {
+    color: rgb(99, 57, 57);
+    font-size: calc(.5rem + 1vw);
+    text-decoration: none;
+    font-weight: 350;
+}
+
+/* ... why is this animation on the whole page/body instead of top and bottom of the link text?? 
+Took it from this pen, where the links are just divs not a list - is that a reason? Reallly tried a lot here...
+ https://codepen.io/EvyatarDa/pen/waKXMd */
+ 
+.navigation-list a:before {
+    position: absolute;
+    opacity: 0;
+    width: 0%;
+    height: 20px;
+    content: '';
+    background: rgb(153, 153, 151);
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+ 
+.navigation-list a:after {
+    position: absolute;
+    opacity: 0;
+    width: 0%;
+    height: 20px;
+    content: '';
+    background: rgb(153, 153, 151);
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+
+.navigation-list a:before {
+    left: 0px;
+    top: 0px;
+}
+
+.navigation-list a:after {
+    right: 0px;
+    bottom: 0px;
+}
+
+.navigation-list a:hover:before, .navigation-list a:hover:after {
+    opacity: 1;
+    width: 100%;
+}
+
+/* basic nav links styling */
+a:visited {
+    color: rgb(3, 3, 3);
+}
+  
+a:hover {
+    color:rgb(153, 153, 151);
+    text-decoration: none;
+}
+  
+a:focus {
+    color:rgb(153, 153, 151);
+    text-decoration: none;
+}
+
+a:active {
+    color: red;
+}
+
+li {
+    list-style: none;
+}
+
+/* top main header navigator for all pages */
+.page-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    padding: 2vh 0;
+    border-bottom: 1px solid rgb(99, 57, 57);
+}
+
+.page-header__item:last-child {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    text-align: right;
+}
+
+.navigation-list li {
+    display: inline-block;
+    padding: 20px;  
+}
+
+.main-logo {
+    width: 300px;
+    max-width: 30vw;
+}
+
+/* for main nav on smaller screens*/
+@media all and (max-width: 650px) {
+    .main-logo {
+       max-width: 20vw;
+    }
+    .navigation-list li {
+        padding: 5px;
+    }
+}
+
+
+/*the GRID for the WORK page starting with  grid fallback */
+
+.works-grid__item {
+    display: inline-block;
+    width: 33%;
+    padding: 1em;
+    -webkit-transition-duration: 0.8s;
+         -o-transition-duration: 0.8s;
+            transition-duration: 0.8s;
+    -webkit-transition-property: background-color;
+    -o-transition-property: background-color;
+    transition-property: background-color;
+     
+}
+/*  end grid fallback */
+  
+
+@supports (display: grid) {
+    .works-grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 20px 1fr 20px 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    }
+
+    .works-grid__item {
+    background-color: rgb(99, 57, 57);
+    color: rgb(255, 255, 241);
+    width: auto;
+    min-height: auto;
+    margin: 0;
+    font-size: medium;
+    }
+}
+
+.works-grid__item:hover {
+    background-color:  rgb(153, 153, 151);
+    cursor: pointer;
+}
+
+.works-grid__item:focus {
+    background-color:  rgb(153, 153, 151);
+    cursor: pointer;
+}
+
+
+
+
+/* profile main center index page */
+
+.profile {
+    max-width: 900px;
+    margin: 16vh auto 6vh auto;
+    padding: 30px;
+}
+
+.profile__headlines {
+    padding-top: 8px;
+}
+
+.profile__portrait {
+    border-radius: 50%;
+    float: left;
+    max-width: 250px;
+    margin-right: 5vw;
+    width: 40%;
+}
+
+/* ABOUT page */
+
+.about-center {
+    text-align: center;
+    max-width: 700px;
+    margin: 5vh auto;
+}
+
+.about-center__background-info-txt {
+    text-align: justify;
+}
+
+.about-center__skills-list {
+    margin: 5vw auto;
+    border: 1px solid rgb(99, 57, 57);
+    border-radius: 8px;
+    padding: 1em;
+}
+
+/* animations on ABOUT page */
+@-webkit-keyframes color-change {
+    0% {
+      fill: #edc655;
+    }
+    50% {
+      fill: #fcffad;
+    }
+    100% {
+      fill: #f76414;
+    }
+}
+@keyframes color-change {
+    0% {
+      fill: #edc655;
+    }
+    50% {
+      fill: #fcffad;
+    }
+    100% {
+      fill: #f76414;
+    }
+}
+
+
+
+@-webkit-keyframes move-logo {
+    from {
+        -webkit-transform: translate(50vw, 70vh) scale(7);
+                transform: translate(50vw, 70vh) scale(7);
+        opacity: 0.3;
+        
+    }
+    to {
+        -webkit-transform: translate(1vw, 2vh) scale(1);
+                transform: translate(1vw, 2vh) scale(1);
+        opacity: 1;
+    }
+    
+}
+
+
+
+@keyframes move-logo {
+    from {
+        -webkit-transform: translate(50vw, 70vh) scale(7);
+                transform: translate(50vw, 70vh) scale(7);
+        opacity: 0.3;
+        
+    }
+    to {
+        -webkit-transform: translate(1vw, 2vh) scale(1);
+                transform: translate(1vw, 2vh) scale(1);
+        opacity: 1;
+    }
+    
+}
+
+.main-logo--move-ABOUT {
+    -webkit-animation: 40s move-logo 1 alternate linear;
+            animation: 40s move-logo 1 alternate linear;
+    z-index: -9;
+}
+
+
+/* footer for all pages  */
+
+.page-footer {
+    clear: both;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+}
+
+/* CONTACT FORM */
+.contact-form-container {
+    text-align: center;
+    margin: 5vh auto;
+    
+}
+
+.contact-form-container__quick-links {
+    padding: 1vh 0;
+    line-height: 2;
+}
+
+.contact-form-container__online-form  {
+    border: solid 2px rgb(153, 153, 151);
+    padding: 1.5em;
+    border-radius: 20px;
+    max-width: 70%;
+    width: 900px;
+    margin: 0 auto;
+}
+
+/* trying to make this less wide as it only takes an email address
+#contact-email {
+   width: 500px;
+}
+*/
+
+
+
+
+
+/* CSS reset buttons */
+
+button, input, select, textarea {
+    color: inherit;
+    font-family: inherit;
+    font-size: 100%;
+    font-style: italic;
+}
+/* end of CSS reset buttons */
+
+
+input[type=email] {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid rgb(153, 153, 151);
+    border-radius: 15px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    margin-top: .5vh;
+    margin-bottom: 3vh;
+    resize: vertical;
+}
+
+
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid rgb(153, 153, 151);
+    border-radius: 15px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    margin-top: .5vh;
+    margin-bottom: 3vh;
+    resize: vertical;
+}
+
+
+input[type=tel] {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid rgb(153, 153, 151);
+    border-radius: 15px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    margin-top: .5vh;
+    margin-bottom: 3vh;
+    resize: vertical;
+}
+
+/* could be smaller and centered*/
+input[type=submit] {
+    width: 40%;
+    padding: 12px;
+    border: 2px solid rgb(153, 153, 151);
+    border-radius: 15px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    margin: 0 auto;
+}
+
+input[type=submit]:hover {
+    background-color: #d4d3d3;
+}
+  
+
+
+/* work grid responsiveness
+
+more space on sides of grid for larger screens with heading moved to match */
+@media (min-width: 900px) {
+    .works-grid {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+    .work {
+        padding-left: 10%;
+    }
+}
+
+@media all and (max-width: 500px) {
+    
+    .works-grid {
+      -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+      grid-gap: 10px;
+    }
+    .works-grid__item:last-child {
+      grid-column: auto / auto;
+      grid-row: auto / auto;
+    }
+}
+
+@media all and (min-width: 500px) and (max-width: 750px){
+    .works-grid {
+      -ms-grid-columns: 1fr 10px 1fr;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 10px;
+    }
+    .works-grid__item:last-child {
+      grid-column: auto / auto;
+      grid-row: auto / auto;
+    } 
+}
+
+/* ABOUT PAGE */
+
+button,
+.button {
+    border: none;
+    display: inline-block;
+    font-family: inherit;
+    background-color: #c48431;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 10px;
+    /* 3D / shadow effect */
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+    -webkit-transition: 0.5s opacity;
+    -o-transition: 0.5s opacity;
+    transition: 0.5s opacity;
+}
+
+
+
+button:hover,
+button:focus,
+.button:hover,
+.button:focus {
+   cursor: pointer;
+   opacity: 0.5;
+}

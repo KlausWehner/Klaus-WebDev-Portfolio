@@ -55,9 +55,10 @@ a {
     font-weight: 350;
 }
 
-/* ... why is this animation on the whole page/body instead of top and bottom of the link text?? 
+/* I could not make this work - no answer from tutor either:
+... why is this animation on the whole page/body instead of top and bottom of the link text?? 
 Took it from this pen, where the links are just divs not a list - is that a reason? Reallly tried a lot here...
- https://codepen.io/EvyatarDa/pen/waKXMd */
+ https://codepen.io/EvyatarDa/pen/waKXMd 
  
 .navigation-list a:before {
     position: absolute;
@@ -97,7 +98,7 @@ Took it from this pen, where the links are just divs not a list - is that a reas
 .navigation-list a:hover:before, .navigation-list a:hover:after {
     opacity: 1;
     width: 100%;
-}
+}  */
 
 /* basic nav links styling */
 a:visited {

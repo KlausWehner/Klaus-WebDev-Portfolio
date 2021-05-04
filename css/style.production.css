@@ -55,6 +55,55 @@ a {
     font-weight: 350;
 }
 
+/* Navbar Animation */
+
+nav.page-header__item a::before {
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+position: absolute;
+width: 70px;
+height: 2px;
+background: #6b2727;
+content: "";
+opacity: 0;
+-webkit-transition: all 0.4s;
+transition: all 0.4s;
+}
+
+nav.page-header__item a::after {
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+position: absolute;
+width: 70px;
+height: 2px;
+background: #581616;
+content: "";
+opacity: 0;
+-webkit-transition: all 0.4s;
+transition: all 0.4s;
+}
+
+nav.page-header__item a::before {
+top: auto;
+-webkit-transform: translateX(100px);
+transform: translateX(100px);
+}
+
+nav.page-header__item a::after {
+bottom: auto;
+-webkit-transform: translateX(30px);
+transform: translateX(30px);
+}
+
+nav.page-header_item a:hover::before,
+nav.page-header_item a:hover::after {
+opacity: 1;
+-webkit-transform: translateX(0);
+transform: translateX(0);
+}
+
 /* I could not make this work - no answer from tutor either:
 ... why is this animation on the whole page/body instead of top and bottom of the link text?? 
 Took it from this pen, where the links are just divs not a list - is that a reason? Reallly tried a lot here...

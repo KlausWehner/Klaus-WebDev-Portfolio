@@ -58,8 +58,66 @@ a {
     color: var(--main-color);
     font-size: var(--font-size-links);
     text-decoration: none;
-    font-weight: var(--font-weight-light);
+    font-weight: var(--font-weight-medium);
+    position: relative;
 }
+
+/* Animation now revised - needed:
+ position: relative on <a> above
+*/
+ 
+ .navigation-list a:before, .navigation-list a:after
+ {
+     position: absolute;
+     opacity: 0;
+     width: 0%;
+     height: 2px;
+     content: '';
+     background: var(--secondary-color);
+     transition: all 0.3s;
+ }
+ 
+ .navigation-list a:before
+ {
+     left: 0px;
+     top: -.8vw; /* width for responsiveness*/
+ }
+ 
+.navigation-list a:after
+ {
+     right: 0px;
+     bottom: -.6vw;
+ }
+ 
+.navigation-list a:hover:before, .navigation-list a:hover:after
+ {
+     opacity: 1;
+     width: 100%;
+ }
+/* basic nav links styling */
+a:visited {
+    color: rgb(3, 3, 3);
+}
+  
+
+a:hover, a:focus {
+    color:var(--secondary-color);
+    text-decoration: none;
+}
+
+
+a:active {
+    color: #e05151;
+}
+
+
+li {
+    list-style: none;
+}
+
+
+
+
 
 
 /*nav a {
@@ -76,7 +134,7 @@ a {
   text-align: center;
 	font-size: 1.35em;
 }
-*/
+
 
 nav a:hover,
 nav a:focus {
@@ -108,7 +166,7 @@ nav a::after {
 	top: 50%;
 	height: 2px;
 	margin-top: -1px;
-	background: var(--secondary-color); /*colour of the animation*/
+	background: var(--secondary-color); /*colour of the animation
 	content: '';
 	z-index: -1;
 	-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
@@ -157,7 +215,7 @@ nav a:focus::after {
 
 
 
-/* I could not make this work - no answer from tutor either:
+I could not make this work - no answer from tutor either:
 ... why is this animation on the whole page/body instead of top and bottom of the link text?? 
 Took it from this pen, where the links are just divs not a list - is that a reason? Reallly tried a lot here...
  https://codepen.io/EvyatarDa/pen/waKXMd  

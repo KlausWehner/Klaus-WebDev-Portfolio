@@ -120,6 +120,8 @@ li {
 
 
 
+
+
 /*nav a {
 	position: relative;
 	display: inline-block;
@@ -477,16 +479,25 @@ input[type=email], textarea, input[type=tel] {
 /* could be smaller and centered*/
 input[type=submit] {
     width: 40%;
-    padding: 12px;
+    padding: 2vh;
     border: 2px solid var(--secondary-color);
     border-radius: 15px;
     box-sizing: border-box;
-    margin: 0 auto;
+    margin: 3vh auto 1vh;
 }
 
 input[type=submit]:hover {
-    background-color: #d4d3d3;
+    background-color: #e0dddd;
 }
+
+
+.error-message {
+    color: red;
+    font-size: 1em;
+    font-weight: 700;
+    
+    margin-top: -15px;
+  }
   
 
 

@@ -8,7 +8,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,500;0,700;1,500&family=Poppins:wght@600&family=Recursive&family=Source+Code+Pro:wght@400;900&display=swap" rel="stylesheet"> 
 
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
-        <link rel="stylesheet" type="text/css" href="../css/style.production.css">
+        <link rel="stylesheet" type="text/css" href="../css/styles.css">
         <link rel="apple-touch-icon" sizes="180x180" href="../img/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png">
@@ -47,6 +47,7 @@
 
         <div class="contact-form-container__quick-links">
             <h2>Klaus Wehner:</h2>
+           
             phone: <a href="tel:+49 176 550 25485">+49 176 550 25485</a><br>
             email: <a href="mailto:mail@museumclausum.org">mail@museumclausum.org</a><br>
             
@@ -56,16 +57,24 @@
             CONTACT FORM:<br><br>
             <form action="" method="post" id="contact-form">
                 
-                <label class="standard-label contact-form-container__online-form-email" for="contact-email">E-mail: (required) </label><br>
-                <input type="email" required id="contact-email"> <br>
-            
+                <div class="input-wrapper">
+                    <label class="standard-label contact-form-container__online-form-message" for="message-field">Your message: </label>
+                    <textarea maxlength="1500" required id="message-field"></textarea><br>
+                </div>
+
                 <label class="standard-label contact-form-container__online-form-phone" for="contact-phone">Your phone number: (optional) </label>
                 <input type="tel" id="contact-phone"><br>
             
-                <label class="standard-label contact-form-container__online-form-message" for="message-field">Your message: </label>
-                <textarea maxlength="1500" required id="message-field"></textarea><br>
+               
+
+                <div class="input-wrapper">
+                    <label class="standard-label contact-form-container__online-form-email" for="contact-email">E-mail: (Please enter a full email address to post your message.) </label><br>
+                    <input type="email" required id="contact-email"> <br>
+                </div>
+
+               
             
-                <input type="submit" value="SEND MESSAGE">
+                <input type="submit" value="SEND MESSAGE" class="send-btn">
             </form>
          </div>
 
@@ -86,5 +95,6 @@
 
 
     <script src="../js/tota11y.min.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 </html>
